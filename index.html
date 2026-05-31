@@ -4,6 +4,10 @@
     <title>Brew Andikha Coffee</title>
 
     <style>
+        html{
+            scroll-behavior: smooth;
+        }
+
         body{
             font-family: Arial;
             background-color: #f5f1eb;
@@ -27,15 +31,27 @@
             list-style: none;
             display: flex;
             gap: 15px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav li{
+            display: inline;
         }
 
         nav a{
             color: white;
             text-decoration: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+        }
+
+        nav a:hover{
+            background: rgba(255,255,255,0.2);
         }
 
         section{
-            padding: 50px 20px;
+            padding: 60px 20px;
         }
 
         h1, h2{
@@ -45,7 +61,7 @@
 
         .hero{
             text-align: center;
-            padding: 70px 20px;
+            padding: 80px 20px;
         }
 
         button{
@@ -105,13 +121,6 @@
             text-align: center;
             width: 220px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            transition: 0.3s;
-        }
-
-        .menu-item.active{
-            transform: scale(1.1);
-            box-shadow: 0 0 20px brown;
-            border: 3px solid brown;
         }
 
         .menu-item img{
@@ -138,26 +147,14 @@
             font-weight: bold;
         }
 
-        /* ABOUT */
-        .about-box{
-            max-width: 700px;
+        .about-box, .contact-box{
+            max-width: 600px;
             margin: auto;
             text-align: center;
             background: white;
-            padding: 30px;
+            padding: 25px;
             border-radius: 15px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-
-        /* CONTACT */
-        .contact-container{
-            text-align:center;
-            background:white;
-            padding:30px;
-            border-radius:15px;
-            box-shadow:0 0 15px rgba(0,0,0,0.2);
-            width:350px;
-            margin: auto;
         }
     </style>
 </head>
@@ -167,6 +164,7 @@
 <!-- NAVIGATION -->
 <nav>
     <h2>Brew Andikha</h2>
+
     <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#menu">Menu</a></li>
@@ -190,11 +188,8 @@
 
     <div class="container">
 
-        <!-- SIDEBAR -->
         <div class="sidebar">
             <div class="logo">Brew<br>Andikha<br>Coffee</div>
-
-            <h3>Choose Coffee</h3>
 
             <input type="text" id="customer" placeholder="Pangalan">
 
@@ -210,7 +205,6 @@
             <button onclick="submitOrder()">Submit Order</button>
         </div>
 
-        <!-- MENU ITEMS -->
         <div class="menu">
 
             <div class="menu-item" id="americano">
@@ -245,32 +239,27 @@
     <h1>About Us</h1>
     <div class="about-box">
         <p>
-            Brew Andikha Coffee is a small coffee shop dedicated to serving
-            high-quality and freshly brewed coffee. We aim to give customers
-            a relaxing and enjoyable coffee experience every day.
+            Brew Andikha Coffee is a cozy coffee shop that serves freshly brewed coffee
+            made with love. We aim to give customers the best coffee experience every day.
         </p>
     </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
-    <div class="contact-container">
-        <h1>Contact Us</h1>
+    <h1>Contact Us</h1>
+    <div class="contact-box">
         <p>📞 09162006589</p>
         <p>📧 brewandikha@gmail.com</p>
         <p>📍 Mexico, Pampanga, Philippines</p>
-        <p>☕ Brew Andikha Coffee</p>
     </div>
 </section>
 
 <script>
-function removeActive(){
+function selectCoffee(coffee, id){
     document.querySelectorAll(".menu-item")
     .forEach(item => item.classList.remove("active"));
-}
 
-function selectCoffee(coffee, id){
-    removeActive();
     document.getElementById(id).classList.add("active");
     document.getElementById("coffee").value = coffee;
 
