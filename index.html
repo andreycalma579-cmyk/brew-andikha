@@ -12,6 +12,7 @@
             font-family: Arial;
             background-color: #f5f1eb;
             margin: 0;
+            padding: 0;
         }
 
         nav{
@@ -31,6 +32,11 @@
             display: flex;
             gap: 15px;
             margin: 0;
+            padding: 0;
+        }
+
+        nav li{
+            display: inline;
         }
 
         nav a{
@@ -79,17 +85,18 @@
             padding: 20px;
             border-radius: 15px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            height: fit-content;
         }
 
         .logo{
-            background:#4b2e2e;
-            color:white;
-            text-align:center;
-            padding:25px;
-            border-radius:10px;
-            font-size:24px;
-            font-weight:bold;
-            margin-bottom:15px;
+            background-color: #4b2e2e;
+            color: white;
+            text-align: center;
+            padding: 30px 10px;
+            border-radius: 10px;
+            font-size: 30px;
+            font-weight: bold;
+            margin-bottom: 20px;
         }
 
         input, select{
@@ -124,7 +131,7 @@
         }
 
         .order-btn{
-            background: brown;
+            background-color: brown;
             color: white;
             border: none;
             padding: 10px 20px;
@@ -133,30 +140,31 @@
         }
 
         #result{
-            text-align:center;
-            margin-top:30px;
-            font-size:20px;
-            color:blue;
-            font-weight:bold;
+            text-align: center;
+            margin-top: 30px;
+            font-size: 20px;
+            color: blue;
+            font-weight: bold;
         }
 
-        .box{
-            max-width:600px;
-            margin:auto;
-            background:white;
-            padding:25px;
-            border-radius:15px;
-            box-shadow:0 0 10px rgba(0,0,0,0.1);
-            text-align:center;
+        .about-box, .contact-box{
+            max-width: 600px;
+            margin: auto;
+            text-align: center;
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
     </style>
 </head>
 
 <body>
 
-<!-- NAV -->
+<!-- NAVIGATION -->
 <nav>
     <h2>Brew Andikha</h2>
+
     <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#menu">Menu</a></li>
@@ -220,27 +228,6 @@
                 <button class="order-btn" onclick="selectCoffee('Caramel Macchiato','caramel')">Order</button>
             </div>
 
-            <div class="menu-item" id="vanilla">
-                <img src="vanilla.jpg">
-                <h3>Vanilla Latte</h3>
-                <p>₱170</p>
-                <button class="order-btn" onclick="selectCoffee('Vanilla Latte','vanilla')">Order</button>
-            </div>
-
-            <div class="menu-item" id="coldbrew">
-                <img src="coldbrew.jpg">
-                <h3>Cold Brew</h3>
-                <p>₱160</p>
-                <button class="order-btn" onclick="selectCoffee('Cold Brew','coldbrew')">Order</button>
-            </div>
-
-            <div class="menu-item" id="frappe">
-                <img src="frappe.jpg">
-                <h3>Chocolate Frappe</h3>
-                <p>₱180</p>
-                <button class="order-btn" onclick="selectCoffee('Chocolate Frappe','frappe')">Order</button>
-            </div>
-
         </div>
     </div>
 
@@ -250,26 +237,28 @@
 <!-- ABOUT -->
 <section id="about">
     <h1>About Us</h1>
-    <div class="box">
-        Brew Andikha Coffee is a cozy café that serves freshly brewed drinks
-        made with passion and quality beans. We bring comfort in every cup.
+    <div class="about-box">
+        <p>
+            Brew Andikha Coffee is a cozy coffee shop that serves freshly brewed coffee
+            made with love. We aim to give customers the best coffee experience every day.
+        </p>
     </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
     <h1>Contact Us</h1>
-    <div class="box">
-        📞 09162006589 <br><br>
-        📧 brewandikha@gmail.com <br><br>
-        📍 Mexico, Pampanga, Philippines
+    <div class="contact-box">
+        <p>📞 09162006589</p>
+        <p>📧 brewandikha@gmail.com</p>
+        <p>📍 Mexico, Pampanga, Philippines</p>
     </div>
 </section>
 
 <script>
 function selectCoffee(coffee, id){
     document.querySelectorAll(".menu-item")
-    .forEach(i => i.classList.remove("active"));
+    .forEach(item => item.classList.remove("active"));
 
     document.getElementById(id).classList.add("active");
     document.getElementById("coffee").value = coffee;
@@ -289,3 +278,4 @@ function submitOrder(){
 
 </body>
 </html>
+           
