@@ -20,6 +20,7 @@
             color: white;
             position: sticky;
             top: 0;
+            z-index: 1000;
         }
 
         nav ul{
@@ -34,7 +35,7 @@
         }
 
         section{
-            padding: 40px 20px;
+            padding: 50px 20px;
         }
 
         h1, h2{
@@ -44,7 +45,7 @@
 
         .hero{
             text-align: center;
-            padding: 60px 20px;
+            padding: 70px 20px;
         }
 
         button{
@@ -137,10 +138,21 @@
             font-weight: bold;
         }
 
+        /* ABOUT */
+        .about-box{
+            max-width: 700px;
+            margin: auto;
+            text-align: center;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
         /* CONTACT */
         .contact-container{
             text-align:center;
-            background:rgba(255,255,255,0.9);
+            background:white;
             padding:30px;
             border-radius:15px;
             box-shadow:0 0 15px rgba(0,0,0,0.2);
@@ -158,6 +170,7 @@
     <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#menu">Menu</a></li>
+        <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
 </nav>
@@ -225,6 +238,18 @@
     </div>
 
     <p id="result"></p>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+    <h1>About Us</h1>
+    <div class="about-box">
+        <p>
+            Brew Andikha Coffee is a small coffee shop dedicated to serving
+            high-quality and freshly brewed coffee. We aim to give customers
+            a relaxing and enjoyable coffee experience every day.
+        </p>
+    </div>
 </section>
 
 <!-- CONTACT -->
