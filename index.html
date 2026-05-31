@@ -1,1 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Brew Andikha Coffee</title>
 
+    <style>
+        html{
+            scroll-behavior: smooth;
+        }
+
+        body{
+            margin:0;
+            font-family: Arial;
+            background:#f5f1eb;
+        }
+
+        /* NAV */
+        nav{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            background:#4b2e2e;
+            color:white;
+            padding:10px 20px;
+            position:sticky;
+            top:0;
+            z-index:1000;
+        }
+
+        nav ul{
+            list-style:none;
+            display:flex;
+            gap:15px;
+            margin:0;
+            padding:0;
+        }
+
+        nav a{
+            color:white;
+            text-decoration:none;
+            padding:8px 12px;
+            border-radius:5px;
+        }
+
+        nav a:hover{
+            background:rgba(255,255,255,0.2);
+        }
+
+        section{
+            padding:60px 20px;
+        }
+
+        h1,h2{
+            text-align:center;
+            color:#4b2e2e;
+        }
+
+        /* HERO */
+        .hero{
+            text-align:center;
+            padding:80px 20px;
+        }
+
+        button{
+            background:brown;
+            color:white;
+            border:none;
+            padding:10px 20px;
+            border-radius:5px;
+            cursor:pointer;
+        }
+
+        /* LAYOUT */
+        .container{
+            display:flex;
+            gap:20px;
+            justify-content:center;
+        }
+
+        .sidebar{
+            width:230px;
+            background:white;
+            padding:20px;
+            border-radius:15px;
+            box-shadow:0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .logo{
+            background:#4b2e2e;
+            color:white;
+            text-align:center;
+            padding:20px;
+            border-radius:10px;
+            font-weight:bold;
+            margin-bottom:15px;
+        }
+
+        input,select{
+            width:100%;
+            padding:10px;
+            margin:10px 0;
+            border-radius:5px;
+            border:1px solid #ccc;
+        }
+
+        /* MENU */
+        .menu{
+            display:grid;
+            grid-template-columns:repeat(3,1fr);
+            gap:20px;
+        }
+
+        .menu-item{
+            background:white;
+            padding:15px;
+            border-radius:15px;
+            text-align:center;
+            width:220px;
+            box-shadow:0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .menu-item img{
+            width:180px;
+            height:180px;
+            object-fit:cover;
+            border-radius:10px;
+        }
+
+        .order-btn{
+            background:brown;
+            color:white;
+            border:none;
+            padding:8px 15px;
+            border-radius:5px;
+            cursor:pointer;
+        }
+
+        #result{
+            text-align:center;
+            font-size:22px;
+            margin-top:20px;
+            color:blue;
+            font-weight:bold;
+        }
+
+        /* ABOUT + CONTACT */
+        .box{
+            max-width:600px;
+            margin:auto;
+            background:white;
+            padding:25px;
+            border-radius:15px;
+            box-shadow:0 0 10px rgba(0,0,0,0.1);
+            text-align:center;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+    <h2>Brew Andikha</h2>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- HOME -->
+<section id="home" class="hero">
+    <h2>Fresh Coffee Everyday</h2>
+    <p>Welcome to Brew Andikha Coffee</p>
+    <button onclick="document.getElementById('menu').scrollIntoView({behavior:'smooth'})">
+        Order Now
+    </button>
+</section>
+
+<!-- MENU -->
+<section id="menu">
+    <h1>Coffee Menu</h1>
+
+    <div class="container">
+
+        <div class="sidebar">
+            <div class="logo">Brew<br>Andikha<br>Coffee</div>
+
+            <input type="text" id="customer" placeholder="Pangalan">
+
+            <select id="coffee">
+                <option>Americano</option>
+                <option>Mocha</option>
+                <option>Caramel Macchiato</option>
+                <option>Vanilla Latte</option>
+                <option>Cold Brew</option>
+                <option>Chocolate Frappe</option>
+            </select>
+
+            <button onclick="submitOrder()">Submit Order</button>
+        </div>
+
+        <div class="menu">
+
+            <div class="menu-item" id="americano">
+                <img src="46a6f033-e813-4fde-9743-84b034e76758.jpg">
+                <h3>Americano</h3>
+                <p>₱140</p>
+                <button class="order-btn" onclick="selectCoffee('Americano','americano')">Order</button>
+            </div>
+
+            <div class="menu-item" id="mocha">
+                <img src="66fe24e9-2eb0-4848-8a84-934c75f5b318.jpg">
+                <h3>Mocha</h3>
+                <p>₱180</p>
+                <button class="order-btn" onclick="selectCoffee('Mocha','mocha')">Order</button>
+            </div>
+
+            <div class="menu-item" id="caramel">
+                <img src="28a4cfa1-de22-4be5-b4fa-8bbea418a2dc.jpg">
+                <h3>Caramel Macchiato</h3>
+                <p>₱190</p>
+                <button class="order-btn" onclick="selectCoffee('Caramel Macchiato','caramel')">Order</button>
+            </div>
+
+            <div class="menu-item" id="vanilla">
+                <img src="19f15237-cbd5-4db6-b45c-9ff7e8f0304b.jpg">
+                <h3>Vanilla Latte</h3>
+                <p>₱175</p>
+                <button class="order-btn" onclick="selectCoffee('Vanilla Latte','vanilla')">Order</button>
+            </div>
+
+            <div class="menu-item" id="coldbrew">
+                <img src="2940bb46-a5dc-43f8-82a4-12d93fdc152f.jpg">
+                <h3>Cold Brew</h3>
+                <p>₱160</p>
+                <button class="order-btn" onclick="selectCoffee('Cold Brew','coldbrew')">Order</button>
+            </div>
+
+            <div class="menu-item" id="frappe">
+                <img src="55b6f6bd-e20e-4fcd-901a-de11fc4e571c.jpg">
+                <h3>Chocolate Frappe</h3>
+                <p>₱200</p>
+                <button class="order-btn" onclick="selectCoffee('Chocolate Frappe','frappe')">Order</button>
+            </div>
+
+        </div>
+    </div>
+
+    <p id="result"></p>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+    <h1>About Us</h1>
+    <div class="box">
+        Brew Andikha Coffee is a café that serves fresh brewed coffee made daily
+        with high quality beans and love for coffee culture.
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <h1>Contact Us</h1>
+    <div class="box">
+        📞 09162006589 <br><br>
+        📧 brewandikha@gmail.com <br><br>
+        📍 Mexico, Pampanga, Philippines
+    </div>
+</section>
+
+<script>
+function selectCoffee(coffee,id){
+    document.querySelectorAll(".menu-item")
+    .forEach(i => i.classList.remove("active"));
+
+    document.getElementById(id).classList.add("active");
+    document.getElementById("coffee").value = coffee;
+
+    document.getElementById("result").innerText =
+        coffee + " selected";
+}
+
+function submitOrder(){
+    let customer = document.getElementById("customer").value;
+    let coffee = document.getElementById("coffee").value;
+
+    document.getElementById("result").innerText =
+        `Thank you ${customer}! Your order is ${coffee}`;
+}
+</script>
+
+</body>
+</html>
