@@ -1,0 +1,98 @@
+body{
+  margin:0;
+  font-family:Arial;
+}
+
+nav{
+  background:#3e2723;
+  color:white;
+  display:flex;
+  justify-content:space-between;
+  padding:15px;
+}
+
+nav ul{
+  list-style:none;
+  display:flex;
+  gap:20px;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+}
+
+.hero{
+  text-align:center;
+  padding:120px;
+  background:#d7ccc8;
+}
+
+button{
+  padding:10px 20px;
+  background:#3e2723;
+  color:white;
+  border:none;
+} .menu{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  margin-top:50px;
+  flex-wrap:wrap;
+}
+.menu-item{
+    border: 1px solid #ccc;
+    padding: 15px;
+    width: 180px;
+    text-align: center;
+    display: inline-block;
+    margin: 10px;
+    background: white;
+    border-radius: 10px;
+}
+
+.menu-item img{
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.menu-item button{
+    background-color: #5c4033;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.hero{
+    background: url("e544a08c-d27a-449d-b0ce-48b83777af54.jpg") center center/cover no-repeat;
+    height: 500px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    text-align: center;
+}
+
+body {
+    background: url('coffee-bg.jpg') no-repeat center center/cover;
+    font-family: Arial, sans-serif;
+}
+
+.about-container {
+    background: rgba(0,0,0,0.6);
+    color: white;
+    padding: 40px;
+    width: 70%;
+    margin: 50px auto;
+    border-radius: 15px;
+    text-align: center;
+}
+
