@@ -1,178 +1,163 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Brew Andikha Coffee</title>
+    <title>Brew Andikha Coffee</title>
 
-<style>
-body{
-    font-family: Arial, sans-serif;
-    background-color:#f5f1eb;
-    margin:0;
-    padding:0;
-}
+    <style>
+        body{
+            font-family: Arial;
+            background-color: #f5f1eb;
+            margin: 0;
+            padding: 20px;
+        }
 
-/* NAVIGATION */
-nav{
-    background-color:#4b2e2e;
-    color:white;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:15px 30px;
-}
+        nav{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background: #4b2e2e;
+            color: white;
+        }
 
-nav ul{
-    list-style:none;
-    display:flex;
-    gap:20px;
-    margin:0;
-}
+        nav ul{
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
 
-nav a{
-    color:white;
-    text-decoration:none;
-}
+        nav a{
+            color: white;
+            text-decoration: none;
+        }
 
-.hero{
-    text-align:center;
-    padding:50px;
-    background:#e6d5c3;
-}
+        h1{
+            text-align: center;
+            color: #4b2e2e;
+        }
 
-.hero h2{
-    color:#4b2e2e;
-}
+        .hero{
+            text-align: center;
+            padding: 40px;
+        }
 
-.footer-links{
-    text-align:center;
-    padding:15px;
-}
+        button{
+            padding: 10px 20px;
+            background: brown;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
 
-/* MENU SECTION */
-.menu-section{
-    padding:20px;
-}
+        .container{
+            display: flex;
+            gap: 20px;
+        }
 
-h1{
-    text-align:center;
-    color:#4b2e2e;
-}
+        .sidebar{
+            width: 230px;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            height: fit-content;
+        }
 
-.container{
-    display:flex;
-    gap:20px;
-}
+        .logo{
+            background-color: #4b2e2e;
+            color: white;
+            text-align: center;
+            padding: 30px 10px;
+            border-radius: 10px;
+            font-size: 35px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
 
-.sidebar{
-    width:230px;
-    background:white;
-    padding:20px;
-    border-radius:15px;
-    box-shadow:0 0 10px rgba(0,0,0,0.1);
-    height:fit-content;
-}
+        input, select{
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
 
-.logo{
-    background-color:#4b2e2e;
-    color:white;
-    text-align:center;
-    padding:30px 10px;
-    border-radius:10px;
-    font-size:35px;
-    font-weight:bold;
-    margin-bottom:20px;
-}
+        .menu{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
 
-input, select{
-    width:100%;
-    padding:10px;
-    margin-top:10px;
-    margin-bottom:15px;
-    border-radius:5px;
-    border:1px solid #ccc;
-}
+        .menu-item{
+            background: white;
+            padding: 15px;
+            border-radius: 15px;
+            text-align: center;
+            width: 220px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
 
-.submit-btn{
-    width:100%;
-    padding:12px;
-    background-color:brown;
-    color:white;
-    border:none;
-    border-radius:5px;
-    cursor:pointer;
-}
+        .menu-item.active{
+            transform: scale(1.1);
+            box-shadow: 0 0 20px brown;
+            border: 3px solid brown;
+        }
 
-.menu{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-}
+        .menu-item img{
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
 
-.menu-item{
-    background:white;
-    padding:15px;
-    border-radius:15px;
-    text-align:center;
-    width:220px;
-    box-shadow:0 0 10px rgba(0,0,0,0.1);
-    transition:0.3s;
-}
+        .order-btn{
+            background-color: brown;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
 
-.menu-item.active{
-    transform:scale(1.05);
-    box-shadow:0 0 20px brown;
-    border:3px solid brown;
-}
-
-.menu-item img{
-    width:180px;
-    height:180px;
-    object-fit:cover;
-    border-radius:10px;
-}
-
-.order-btn{
-    background-color:brown;
-    color:white;
-    border:none;
-    padding:10px 20px;
-    border-radius:5px;
-    cursor:pointer;
-}
-
-#result{
-    text-align:center;
-    margin-top:30px;
-    font-size:25px;
-    color:blue;
-    font-weight:bold;
-}
-</style>
+        #result{
+            text-align: center;
+            margin-top: 30px;
+            font-size: 25px;
+            color: blue;
+            font-weight: bold;
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- HOME SECTION -->
+<!-- NAVIGATION -->
+<nav>
+    <h1>Brew Andikha</h1>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
 
-
-<section class="hero" id="home">
-    <h2>Welcome to Brew Andikha!</h2>
-    <p>This is my website.</p>
+<!-- HERO -->
+<section class="hero">
+    <h2>Fresh Coffee Everyday</h2>
+    <p>Enjoy the best coffee in town.</p>
+    <a href="#menu"><button>Order Now</button></a>
 </section>
-
-
-
-<!-- MENU SECTION -->
-<section class="menu-section" id="menu">
 
 <h1>Coffee Menu</h1>
 
 <div class="container">
 
+    <!-- SIDEBAR -->
     <div class="sidebar">
-
         <div class="logo">
             Brew<br>Andikha<br>Coffee
         </div>
@@ -190,108 +175,59 @@ input, select{
             <option>Chocolate Frappe</option>
         </select>
 
-        <button class="submit-btn" onclick="submitOrder()">
-            Submit Order
-        </button>
-
+        <button onclick="submitOrder()">Submit Order</button>
     </div>
 
+    <!-- MENU -->
     <div class="menu">
 
         <div class="menu-item" id="americano">
             <img src="46a6f033-e813-4fde-9743-84b034e76758.jpg">
             <h3>Americano</h3>
             <p>₱140</p>
-            <button class="order-btn"
-            onclick="selectCoffee('Americano','americano')">
-            Order
-            </button>
+            <button class="order-btn" onclick="selectCoffee('Americano','americano')">Order</button>
         </div>
 
         <div class="menu-item" id="mocha">
             <img src="66fe24e9-2eb0-4848-8a84-934c75f5b318.jpg">
             <h3>Mocha</h3>
             <p>₱180</p>
-            <button class="order-btn"
-            onclick="selectCoffee('Mocha','mocha')">
-            Order
-            </button>
+            <button class="order-btn" onclick="selectCoffee('Mocha','mocha')">Order</button>
         </div>
 
         <div class="menu-item" id="caramel">
             <img src="28a4cfa1-de22-4be5-b4fa-8bbea418a2dc.jpg">
             <h3>Caramel Macchiato</h3>
             <p>₱190</p>
-            <button class="order-btn"
-            onclick="selectCoffee('Caramel Macchiato','caramel')">
-            Order
-            </button>
-        </div>
-
-        <div class="menu-item" id="vanilla">
-            <img src="19f15237-cbd5-4db6-b45c-9ff7e8f0304b.jpg">
-            <h3>Vanilla Latte</h3>
-            <p>₱175</p>
-            <button class="order-btn"
-            onclick="selectCoffee('Vanilla Latte','vanilla')">
-            Order
-            </button>
-        </div>
-
-        <div class="menu-item" id="coldbrew">
-            <img src="2940bb46-a5dc-43f8-82a4-12d93fdc152f.jpg">
-            <h3>Cold Brew</h3>
-            <p>₱160</p>
-            <button class="order-btn"
-            onclick="selectCoffee('Cold Brew','coldbrew')">
-            Order
-            </button>
-        </div>
-
-        <div class="menu-item" id="frappe">
-            <img src="55b6f6bd-e20e-4fcd-901a-de11fc4e571c.jpg">
-            <h3>Chocolate Frappe</h3>
-            <p>₱200</p>
-            <button class="order-btn"
-            onclick="selectCoffee('Chocolate Frappe','frappe')">
-            Order
-            </button>
+            <button class="order-btn" onclick="selectCoffee('Caramel Macchiato','caramel')">Order</button>
         </div>
 
     </div>
-
 </div>
 
 <p id="result"></p>
 
-</section>
-
 <script>
 function removeActive(){
-    var items = document.querySelectorAll(".menu-item");
-    items.forEach(function(item){
-        item.classList.remove("active");
-    });
+    document.querySelectorAll(".menu-item")
+    .forEach(item => item.classList.remove("active"));
 }
 
-function selectCoffee(coffee,id){
+function selectCoffee(coffee, id){
     removeActive();
     document.getElementById(id).classList.add("active");
     document.getElementById("coffee").value = coffee;
-    document.getElementById("result").innerHTML =
-    coffee + " selected";
+
+    document.getElementById("result").innerText =
+        coffee + " selected";
 }
 
 function submitOrder(){
-    var customer =
-    document.getElementById("customer").value;
+    let customer = document.getElementById("customer").value;
+    let coffee = document.getElementById("coffee").value;
 
-    var coffee =
-    document.getElementById("coffee").value;
-
-    document.getElementById("result").innerHTML =
-    "Thank you " + customer +
-    "! Your order is " + coffee;
+    document.getElementById("result").innerText =
+        `Thank you ${customer}! Your order is ${coffee}`;
 }
 </script>
 
